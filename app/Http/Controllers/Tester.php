@@ -33,8 +33,8 @@ class Tester extends Controller
         // $user = User::first();
         $categories = Category::all();
         $post = Posts::with('categories')->first();
-        //  $posts->categories()->attach($categories);
-        // return  $categories->all();
-       dd ($post->toArray());
+        $post->categories()->attach($categories);
+        return  $post;
+    //    dd ($categories->toArray());
     }
 }
