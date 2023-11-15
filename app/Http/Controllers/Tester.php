@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class Tester extends Controller
 {
+    //one to one 
     public function index()
     {
         // $user = User::first();
@@ -16,6 +17,8 @@ class Tester extends Controller
         // return $user->all();
        dd ($user->toArray());
     }
+
+    //one to many
     public function posts()
     {
         // $user = User::first();
@@ -23,13 +26,15 @@ class Tester extends Controller
         return $posts->all();
     //    dd ($user->toArray());
     }
+
+    //many to many 
     public function category()
     {
         // $user = User::first();
         $categories = Category::all();
-        $posts = Posts::with('categories')->first();
-         $posts->categories()->attach($categories);
+        $post = Posts::with('categories')->first();
+        //  $posts->categories()->attach($categories);
         // return  $categories->all();
-       dd ($categories->toArray());
+       dd ($post->toArray());
     }
 }

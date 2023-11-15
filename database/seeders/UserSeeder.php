@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Contact;
+use App\Models\Posts;
+use App\Models\Category;
 
 class UserSeeder extends Seeder
 {
@@ -25,4 +27,5 @@ class UserSeeder extends Seeder
             'address' => 'address text',
         ]);
     }
+    
 }
